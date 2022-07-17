@@ -4,11 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Macondo&family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <title>New Weather App</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <h1>Weather Report</h1>
+    <div class="card wrapper" style="width: 600px">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 time">
+            <ul>
+              <li class="city-name">Hong Kong</li>
+              <li>THURSDAY</li>
+              <li>13<span class="fadeinout">:</span>00</li>
+              <li>mostly sunny</li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="mostly-sunny"
+            />
+            <div class="temp">
+              30<span class="cel-degree">°C|</span
+              ><span class="fah-degree">°F</span>
+            </div>
+          </div>
+          <div class="col-5 wind">
+            <ul>
+              <li>humidity</li>
+              <li>wind speed</li>
+              <li>percipitation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <small
+      ><a href="https://github.com/carmenckm/new-weatherapp">code</a> by
+      carmen</small
+    >
     <script src="src/index.js"></script>
   </body>
 </html>

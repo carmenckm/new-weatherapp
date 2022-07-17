@@ -1,3 +1,72 @@
 h1 {
-  color: blue;
+  color: #5657fe;
+  font-family: "VT323", monospace;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "VT323", monospace;
+  color: #fdfeae;
+  background-color: black;
+  margin-left: 10px;
+}
+
+.wrapper {
+  margin-left: 15px;
+  padding-top: 12px;
+}
+
+.card {
+  background: transparent;
+  border-color: #5657fe;
+}
+
+.container {
+  width: 600px;
+  margin-left: 10px;
+  line-height: 26px;
+}
+
+.city-name {
+  color: #ff5704;
+  font-size: 36px;
+}
+
+.time {
+  position: relative;
+  left: -40px;
+}
+
+.wind {
+  position: relative;
+  left: -60px;
+}
+
+.temp {
+  font-size: 36px;
+}
+
+.cel-degree,
+.fah-degree {
+  font-size: 16px;
+  position: relative;
+  top: -12px;
+}
+
+.fadeinout {
+  opacity: 1;
+  animation: fade 0.7s infinite;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
