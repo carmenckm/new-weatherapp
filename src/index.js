@@ -32,6 +32,7 @@ function displayTemperature(response) {
   let dayElement = document.querySelector("#day");
   let hourElement = document.querySelector("#hour");
   let minElement = document.querySelector("#min");
+  let iconElement = document.querySelector("#mainimg");
   console.log(response.data);
 
   //   let dateElement = formatDate(response.data.dt * 1000);
@@ -45,8 +46,13 @@ function displayTemperature(response) {
   dayElement.innerHTML = formatDate(response.data.dt * 1000).dayofweek;
   hourElement.innerHTML = formatDate(response.data.dt * 1000).hr;
   minElement.innerHTML = formatDate(response.data.dt * 1000).min;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "425bf19afa457ff7744c7e8ae8705a71";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=beijing&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=new york&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
