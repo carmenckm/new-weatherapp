@@ -1,6 +1,8 @@
 h1 {
-  color: #5657fe;
+  /* color: #5657fe; */
+  color: #0000ff;
   font-family: "VT323", monospace;
+  font-size: 56px;
 }
 
 ul {
@@ -9,50 +11,56 @@ ul {
 
 body {
   font-family: "VT323", monospace;
-  color: #fdfeae;
+  color: #ffaaa5;
   background-color: #030303;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .wrapper {
-  padding-left: 12px;
+  width: 53rem !important;
+  padding-left: 75px;
 }
 
 .card {
   background: transparent;
-  border-color: #5657fe;
+  /* border-color: #5657fe; */
+  border-color: #0000ff;
   border-style: double;
-  border-width: 3px;
+  border-width: 10px;
+  border-radius: 10px;
 }
 
 .container {
-  width: 550px;
-  margin-bottom: 10px;
-  line-height: 26px;
-  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 52px;
+  font-size: 36px;
 }
 
 .city-name {
-  color: #ff5704;
-  font-size: 36px;
-  margin-left: 45px;
+  color: #ff0000;
+  font-size: 72px;
+  margin-left: 50px;
 }
 
 .time {
   position: relative;
-  left: -40px;
+  left: -80px;
+}
+
+.mainimg {
+  width: 150px;
 }
 
 .tempdiv {
-  font-size: 40px;
-  color: #ffaaa5;
+  font-size: 80px;
+  color: #ffff04;
 }
 
 .cel-degree,
 .fah-degree {
-  font-size: 18px;
+  font-size: 36px;
   position: relative;
-  top: -12px;
+  top: -24px;
 }
 
 .fadeinout {
