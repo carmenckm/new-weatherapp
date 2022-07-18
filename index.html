@@ -16,20 +16,21 @@
       href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Macondo&family=VT323&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>New Weather App</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <h1>Weather Report</h1>
     <div class="card wrapper" style="width: 600px">
-      <div class="city-name">Paris</div>
+      <div id="city-name"></div>
       <div class="container">
         <div class="row">
-          <div class="col-3 time">
+          <div class="col-4 time">
             <ul>
               <li>THURSDAY</li>
               <li>13<span class="fadeinout">:</span>00</li>
-              <li>mostly sunny</li>
+              <li id="weather"></li>
             </ul>
           </div>
           <div class="col-3">
@@ -39,15 +40,14 @@
               alt="mostly-sunny"
             />
             <div class="tempdiv">
-              30<span class="cel-degree">°C|</span
+              <span id="temp"></span><span class="cel-degree">°C|</span
               ><span class="fah-degree">°F</span>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-5">
             <ul>
-              <li>humidity: 70%</li>
-              <li>wind speed: 45Km/H</li>
-              <li>percipitation: 80%</li>
+              <li>humidity: <span id="humid"></span>%</li>
+              <li>wind speed: <span id="wind"></span>km/h</li>
             </ul>
           </div>
         </div>

@@ -18,7 +18,6 @@ body {
 
 .wrapper {
   width: 53rem !important;
-  padding-left: 75px;
 }
 
 .card {
@@ -34,17 +33,18 @@ body {
   margin-bottom: 20px;
   line-height: 52px;
   font-size: 36px;
+  width: 50rem;
 }
 
-.city-name {
+#city-name {
   color: #ff0000;
   font-size: 72px;
-  margin-left: 50px;
+  margin-left: 80px;
 }
 
 .time {
   position: relative;
-  left: -80px;
+  left: -20px;
 }
 
 .mainimg {
