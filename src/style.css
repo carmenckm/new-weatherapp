@@ -77,3 +77,9 @@ body {
     opacity: 1;
   }
 }
+
+.search-bar {
+  position: relative;
+  left: 32rem;
+  top: 20px;
+}
