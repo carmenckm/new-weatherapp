@@ -17,7 +17,8 @@ body {
 }
 
 .wrapper {
-  width: 53rem !important;
+  width: 55rem !important;
+  height: 26rem;
 }
 
 .card {
@@ -33,7 +34,7 @@ body {
   margin-bottom: 20px;
   line-height: 52px;
   font-size: 36px;
-  width: 50rem;
+  width: 54rem;
 }
 
 #city-name {
@@ -61,6 +62,14 @@ body {
   font-size: 36px;
   position: relative;
   top: -24px;
+}
+
+.tempdiv .active {
+  color: #ffff04;
+}
+
+.tempdiv .active:hover {
+  text-decoration: none;
 }
 
 .fadeinout {

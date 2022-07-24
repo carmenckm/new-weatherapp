@@ -35,10 +35,9 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#mainimg");
   console.log(response.data);
 
-  //   let dateElement = formatDate(response.data.dt * 1000);
-  //   console.log(dateElement);
+  celTemp = response.data.main.temp;
 
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  tempElement.innerHTML = Math.round(celTemp);
   cityElement.innerHTML = response.data.name;
   weatherElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = response.data.wind.speed;
@@ -65,7 +64,31 @@ function handleSubmit(event) {
   searchCity(cityInput.value);
 }
 
+function displayCelTemp(event) {
+  event.preventDefault();
+  celLink.classList.add("active");
+  fahLink.classList.remove("active");
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celTemp);
+}
+
+function displayFahTemp(event) {
+  event.preventDefault();
+  fahLink.classList.add("active");
+  celLink.classList.remove("active");
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celTemp * 1.8 + 32);
+}
+
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+
+let celTemp = null;
+
+let celLink = document.querySelector(".cel-degree");
+celLink.addEventListener("click", displayCelTemp);
+
+let fahLink = document.querySelector(".fah-degree");
+fahLink.addEventListener("click", displayFahTemp);
 
 searchCity("hong kong");
