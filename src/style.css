@@ -70,6 +70,7 @@ body {
 
 .tempdiv .active:hover {
   text-decoration: none;
+  cursor: default;
 }
 
 .fadeinout {
