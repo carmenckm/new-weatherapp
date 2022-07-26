@@ -18,7 +18,6 @@ body {
 
 .wrapper {
   width: 55rem !important;
-  height: 26rem;
 }
 
 .card {
@@ -92,4 +91,8 @@ body {
   position: relative;
   left: 32rem;
   top: 20px;
+}
+
+.weather-forecast {
+  text-align: center;
 }

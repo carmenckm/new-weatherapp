@@ -82,6 +82,25 @@ function displayFahTemp(event) {
   tempElement.innerHTML = Math.round(celTemp * 1.8 + 32);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector(".weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  forecastHTML =
+    forecastHTML +
+    `
+            <div class="col-2">
+              <div>MON</div>
+              <img src="http://openweathermap.org/img/wn/01d@2x.png" />
+              <div class="forecast-temp"><span>17</span><span>19</span></div>
+            </div>`;
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
@@ -94,3 +113,5 @@ let fahLink = document.querySelector(".fah-degree");
 fahLink.addEventListener("click", displayFahTemp);
 
 searchCity("hong kong");
+
+displayForecast();
