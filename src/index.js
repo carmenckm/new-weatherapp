@@ -23,6 +23,36 @@ function formatDate(timestamp) {
   return { dayofweek, hr, min };
 }
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector(".weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["FRI", "SAT", "SUN"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div>${day}</div>
+              <img src="http://openweathermap.org/img/wn/01d@2x.png" />
+              <div class="forecast-temp"><span>17</span><span>19</span></div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coord) {
+  let apiKey = "425bf19afa457ff7744c7e8ae8705a71";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let tempElement = document.querySelector("#temp");
   let cityElement = document.querySelector("#city-name");
@@ -50,6 +80,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -82,25 +114,6 @@ function displayFahTemp(event) {
   tempElement.innerHTML = Math.round(celTemp * 1.8 + 32);
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector(".weather-forecast");
-
-  let forecastHTML = `<div class="row">`;
-
-  forecastHTML =
-    forecastHTML +
-    `
-            <div class="col-2">
-              <div>MON</div>
-              <img src="http://openweathermap.org/img/wn/01d@2x.png" />
-              <div class="forecast-temp"><span>17</span><span>19</span></div>
-            </div>`;
-
-  forecastHTML = forecastHTML + `</div>`;
-
-  forecastElement.innerHTML = forecastHTML;
-}
-
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
@@ -113,5 +126,3 @@ let fahLink = document.querySelector(".fah-degree");
 fahLink.addEventListener("click", displayFahTemp);
 
 searchCity("hong kong");
-
-displayForecast();
